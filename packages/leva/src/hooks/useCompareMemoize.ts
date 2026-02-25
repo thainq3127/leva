@@ -39,8 +39,8 @@ import { shallow } from 'zustand/shallow'
  *   }, [memoizedConfig])
  * }
  */
-export function useCompareMemoize(value: any, deep: boolean) {
-  const ref = useRef()
+export function useCompareMemoize<T>(value: T, deep: boolean): T {
+  const ref = useRef<T>(value)
   const compare = deep ? dequal : shallow
 
   if (!compare(value, ref.current)) {

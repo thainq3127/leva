@@ -30,7 +30,7 @@ import { debounce } from '../utils'
  */
 export function useCanvas2d(
   fn: Function
-): [React.RefObject<HTMLCanvasElement>, React.RefObject<CanvasRenderingContext2D>] {
+): [React.RefObject<HTMLCanvasElement | null>, React.RefObject<CanvasRenderingContext2D | null>] {
   const canvas = useRef<HTMLCanvasElement>(null)
   const ctx = useRef<CanvasRenderingContext2D | null>(null)
   const hasFired = useRef(false)

@@ -77,7 +77,7 @@ import { useRef, useCallback } from 'react'
  * }
  */
 export function useTransform<T extends HTMLElement>(): [
-  React.RefObject<T>,
+  React.RefObject<T | null>,
   (point: { x?: number; y?: number }) => void
 ] {
   const ref = useRef<T>(null)

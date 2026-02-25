@@ -11,7 +11,7 @@ import type { Vector2dProps } from './vector2d-types'
 type JoystickProps = { value: Vector2d } & Pick<Vector2dProps, 'onUpdate' | 'settings'>
 
 export function Joystick({ value, settings, onUpdate }: JoystickProps) {
-  const timeout = useRef<number | undefined>()
+  const timeout = useRef<number | undefined>(undefined)
   const outOfBoundsX = useRef(0)
   const outOfBoundsY = useRef(0)
   const stepMultiplier = useRef(1)

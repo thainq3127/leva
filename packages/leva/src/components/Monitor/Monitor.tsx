@@ -29,7 +29,7 @@ const MonitorCanvas = forwardRef(function ({ initialValue }: ObjectProps, ref) {
   const points = useRef([initialValue])
   const min = useRef(initialValue)
   const max = useRef(initialValue)
-  const raf = useRef<number | undefined>()
+  const raf = useRef<number | undefined>(undefined)
 
   const drawPlot = useCallback(
     (_canvas: HTMLCanvasElement, _ctx: CanvasRenderingContext2D) => {
@@ -109,7 +109,7 @@ function getValue(o: React.MutableRefObject<any> | Function) {
 }
 
 export function Monitor({ label, objectOrFn, settings }: MonitorProps) {
-  const ref = useRef<any>()
+  const ref = useRef<any>(undefined)
   const initialValue = useRef(getValue(objectOrFn))
 
   useEffect(() => {

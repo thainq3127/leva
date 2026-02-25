@@ -13,7 +13,7 @@ export function Select({
   disabled,
 }: Pick<SelectProps, 'value' | 'displayValue' | 'onUpdate' | 'id' | 'settings' | 'disabled'>) {
   const { keys, values } = settings
-  const lastDisplayedValue = useRef<any>()
+  const lastDisplayedValue = useRef<any>(undefined)
 
   // in case the value isn't present in values (possibly when changing options
   // via deps), remember the last correct display value.
